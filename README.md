@@ -1,3 +1,3 @@
 # NightsWatch
 
-Term project for MIS233
+Term project for *MIS233*
