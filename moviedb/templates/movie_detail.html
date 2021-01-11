@@ -1,0 +1,38 @@
+{% extends 'base_navbar.html' %} {% block content %}
+<div class="container p-2">
+  <div class="d-flex justify-content-between align-items-center my-2 px-1">
+    <span class="h1 m-0">{{ movie.name }}</span>
+    <span class="float-end h3 rounded-circle bg-dark text-light p-2 m-0">
+      {{ movie.rating }}
+    </span>
+  </div>
+  <div class="d-flex row gx-2 justify-content-between align-items-stretch my-2">
+    <img class="col-4 img-fluid" src="{{ movie.photo_url }}" />
+    <iframe class="col-8" title="Trailer" allowfullscreen src="{{ movie.trailer_url}}"></iframe>
+  </div>
+  <div class="d-flex justify-content-between my-2 p-2">
+    <div class="">
+      {% for genre in movie.genres.all %}
+      <span class="badge rounded-pill bg-dark"> {{ genre.name }} </span>
+      {% endfor %}
+    </div>
+    <span class="flex-fill text-center fw-bold">{{ movie.release_date }}</span>
+    <span
+      class="badge border boder-primary text-dark fw-bold rounded-pill shadow-sm"
+    >
+      {{ movie.duration }}
+    </span>
+  </div>
+  <dl class="row my-2">
+    <dt class="col-sm-2">Directed by</dt>
+    <dd class="col-sm-10">{{ movie.directors }}</dd>
+
+    <dt class="col-sm-2">Cast</dt>
+    <dd class="col-sm-10">{{ movie.cast }}</dd>
+    
+    <dt class="col-sm-2">Short Description</dt>
+    <dd class="col-sm-10">{{ movie.description }}</dd>
+  </div>
+  {% include "movie_comments.html" with comments=comments movie_id=movie.id %}
+</div>
+{% endblock content %}

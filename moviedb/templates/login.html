@@ -1,0 +1,49 @@
+{% extends 'base_plain.html' %} {% block content %}
+
+<div
+  class="vertical-center h-100 w-100 d-flex align-items-center justify-content-center"
+>
+  <div class="card w-25">
+    <div class="card-header">
+      <span class="h3">Login</span>
+    </div>
+    <div class="card-body p-2">
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-floating mb-2">
+          <input
+            id="username"
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Username"
+          />
+          <label for="username">Username</label>
+        </div>
+        <div class="form-floating mb-2">
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="####"
+          />
+          <label for="password">Password</label>
+        </div>
+        <input
+          type="submit"
+          value="Login"
+          class="w-100 btn btn-primary btn-lg mb-1"
+        />
+        <a
+          class="w-100 btn btn-outline-primary"
+          href="{% url 'register' %}?next={{ request.GET.next }}"
+          >Register</a
+        >
+        <input type="hidden" name="next" value="{{ request.GET.next }}" />
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

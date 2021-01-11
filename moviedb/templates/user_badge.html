@@ -1,0 +1,15 @@
+{% if request.user.is_authenticated %}
+<span class="nav-item badge bg-primary align-self-center me-2">
+  {{ request.user }}
+</span>
+<a
+  class="nav-item btn btn-outline-danger"
+  href="{% url 'logout' %}?next={{ request.path }}"
+  >Logout</a
+{% else %}
+<a
+  class="nav-item btn btn-outline-primary"
+  href="{% url 'login' %}?next={{ request.path }}"
+  >Login</a
+>
+{% endif %}

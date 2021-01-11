@@ -1,0 +1,58 @@
+[
+  {
+    "model": "moviedb.Genre",
+    "pk": 1,
+    "fields": {
+      "name": "Horror"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 2,
+    "fields": {
+      "name": "Action"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 3,
+    "fields": {
+      "name": "Sci-Fi"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 4,
+    "fields": {
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 5,
+    "fields": {
+      "name": "Comedy"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 6,
+    "fields": {
+      "name": "Musical"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 7,
+    "fields": {
+      "name": "Thriller"
+    }
+  },
+  {
+    "model": "moviedb.Genre",
+    "pk": 8,
+    "fields": {
+      "name": "Fantasy"
+    }
+  }
+]

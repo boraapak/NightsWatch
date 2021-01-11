@@ -1,0 +1,10 @@
+{% load humanize %}
+<figure class="border-start ps-2">
+  <blockquote class="blockquote">
+    <p>{{ comment.content }}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <strong>{{ comment.created_by }}</strong>,
+    <em>{{ comment.created_date|naturaltime }}</em>
+  </figcaption>
+</figure>

@@ -1,0 +1,32 @@
+<div class="container">
+  {% for comment in comments %}
+  <div>{% include "movie_comment.html" with comment=comment %}</div>
+  {% endfor %} {% if request.user.is_authenticated %}
+  <figure>
+    <blockquote class="blockquote">
+      <form action="{% url 'movie_comment' movie_id=movie_id %}" method="POST">
+        {% csrf_token %}
+        <div class="border-start ps-2">
+          <textarea
+            id="comment"
+            class="form-control border-0 mb-2"
+            name="content"
+            rows="0"
+            placeholder="Your comment..."
+          ></textarea>
+          <figcaption class="blockquote-footer mt-2">
+            <strong>You</strong>,
+            <em>now</em>
+            <input
+              type="submit"
+              value="Submit"
+              class="float-end btn btn-primary btn-sm"
+            />
+          </figcaption>
+        </div>
+        <input type="hidden" name="next" value="{{ request.path }}" />
+      </form>
+    </blockquote>
+  </figure>
+  {% endif %}
+</div>
